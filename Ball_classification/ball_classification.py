@@ -1,9 +1,18 @@
+# Added the data for future model training
+
 def main():
     print("Ball Classification Case Study")
 
-    Features = [[35,"Rough"],[47,"Rough"],[90,"Smooth"],[48,"Rough"],[90,"Smooth"],[35,"Rough"],[92,"Smooth"],[35,"Rough"],[35,"Rough"],[35,"Rough"],[96,"Smooth"],[43,"Rough"],[110,"Smooth"],[35,"Rough"],[95,"Smooth"]]
+# Commit 2
+    # Added Encoding : 
+    # Rough   -> 1
+    # Somooth -> 0
+    # Tennis  -> 1
+    # Cricket -> 2
 
-    Labels = ["Tennis","Tennis","Cricket","Tennis","Cricket","Tennis","Cricket","Tennis","Tennis","Tennis","Cricket","Tennis","Cricket","Tennis","Cricket"]
+    Fetures = [[35,1],[47,1],[90,0],[48,1],[90,0],[35,1],[92,0],[35,1],[35,1],[35,1],[96,0],[43,1],[110,0],[35,1],[95,0]]
+
+    Labels = [1,1,2,1,2,1,2,1,1,1,2,1,2,1,2]
 
     print("Features are : ", Features)
     print("Labels are : ", Labels)
