@@ -3,7 +3,7 @@ from sklearn import tree
 def main():
     print("Ball Classification Case Study")
 
-    # Commit 5
+    # Commit  5
     
     Independent = [[35,1],[47,1],[90,0],[48,1],[90,0],[35,1],[92,0],[35,1],[35,1],[35,1],[96,0],[43,1],[110,0]]
     Dependent = [1,1,2,1,2,1,2,1,1,1,2,1,2]
