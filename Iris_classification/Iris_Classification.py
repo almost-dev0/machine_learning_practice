@@ -19,15 +19,12 @@ def main():
     print(Dataset.target_names)
     print("Length of Dependent Variables : ",len(Dataset.target_names))
 
-    print(Dataset.data[0])
-    print(Dataset.data[1])
-    print(Dataset.data[2])
-    print(Dataset.data[3])
-
-    print(Dataset.target[0])
-    print(Dataset.target[1])
-    print(Dataset.target[2])
-    print(Dataset.target[3])
+    for i in range(len(Dataset.target)):
+        print("ID : %d, Features : %s, Label : %s" % (i,Dataset.data[i], Dataset.target[i]) )
 
 if __name__ == "__main__":
     main()
+
+
+    # Added a loop to iterate through all Iris dataset samples.
+    # Displayed the ID, features, and corresponding label for each sample.
