@@ -10,12 +10,14 @@ def main():
     
     Dataset = load_iris()
 
-    # Commit 2 : Metadata of Dataset
+    # Metadata of Dataset
     print("Independent Variables are : ")
     print(Dataset.feature_names)
+    print("Length of Independent Variables : ",len(Dataset.feature_names))
 
     print("Dependent Variables are : ")
     print(Dataset.target_names)
+    print("Length of Dependent Variables : ",len(Dataset.target_names))
 
 if __name__ == "__main__":
     main()
