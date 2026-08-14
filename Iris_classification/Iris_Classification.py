@@ -24,7 +24,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-    # Added a loop to iterate through all Iris dataset samples.
-    # Displayed the ID, features, and corresponding label for each sample.
