@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 Border = "-" * 40
 
@@ -71,3 +72,30 @@ Y = df["species"]
 
 print("X Shape : ", X.shape)
 print("Y Shape : ", Y.shape)
+
+
+print("")
+#######################################
+# Step 4 : VISUALISATION OF DATASET
+#######################################
+
+print(Border)
+print("Step 4 : Visualisation of Dataset")
+print(Border)
+
+# Scatter plot
+plt.figure(figsize = (20,5))        #(width,length)
+
+for sp in df["species"].unique():
+    temp = df[df["species"] == sp]
+    plt.scatter(temp["petal length (cm)"], 
+                temp["petal width (cm)"],label = sp)
+
+plt.title("Iris Case Study")
+
+plt.xlabel("petal length (cm)")
+plt.ylabel("petal width (cm)")
+
+plt.legend()
+plt.grid()
+plt.show()
