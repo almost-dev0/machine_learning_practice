@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from sklearn.model_selection import train_test_split
+
 Border = "-" * 40
 
 #######################################
@@ -84,7 +86,7 @@ print("Step 4 : Visualisation of Dataset")
 print(Border)
 
 # Scatter plot
-plt.figure(figsize = (20,5))        #(width,length)
+plt.figure(figsize = (7,5))        #(width,length)
 
 for sp in df["species"].unique():
     temp = df[df["species"] == sp]
@@ -118,3 +120,27 @@ plt.ylabel("petal width (cm)")
 plt.legend()
 plt.grid()
 plt.show()
+
+print("")
+#######################################
+# Step 5 : SPLIT THE DATASET FOR TRAINING AND TESTING
+#######################################
+
+print(Border)
+print("Step 5 : Split the Dataset for Training and Testing")
+print(Border)
+
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.5, random_state = 42)
+
+print("Dataset Splitting Successful !")
+
+print("")
+print("Shapes after splitting : ")
+print("X : ", X.shape)
+print("Y : ", Y.shape)
+
+print("X_train : ", X_train.shape)
+print("X_test : ", X_test.shape)
+
+print("Y_train : ", Y_train.shape)
+print("Y_test : ", Y_test.shape)
