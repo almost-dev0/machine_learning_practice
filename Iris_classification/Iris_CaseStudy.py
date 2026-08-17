@@ -90,6 +90,25 @@ for sp in df["species"].unique():
     temp = df[df["species"] == sp]
     plt.scatter(temp["petal length (cm)"], 
                 temp["petal width (cm)"],label = sp)
+'''
+how the Iris species loop works:
+- df[\"species\"] accesses the species column
+- .unique() finds the different categories in the species column
+- The unique result contains setosa, versicolor, and virginica
+- for starts a loop
+- sp is the loop variable
+- The loop assigns one species to sp during each iteration
+- First iteration: sp = setosa
+- Second iteration: sp = versicolor
+- Third iteration: sp = virginica
+- df[\"species\"] == sp checks which rows match the current species
+- == is the comparison operator and returns True or False
+- df[...] uses the True/False results to filter matching rows
+- temp stores the filtered rows for the current species
+- plt.scatter() plots the filtered species
+- label=sp gives each plotted species a name for the legend
+- plt.legend() displays those species names"
+'''
 
 plt.title("Iris Case Study")
 
