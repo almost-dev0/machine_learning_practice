@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
 
 Border = "-" * 40
 
@@ -144,3 +145,17 @@ print("X_test : ", X_test.shape)
 
 print("Y_train : ", Y_train.shape)
 print("Y_test : ", Y_test.shape)
+
+print("")
+#######################################
+# Step 6 : BUILD THE MODEL
+#######################################
+
+print(Border)
+print("Step 6 : Build the Model")
+print(Border)
+
+model = DecisionTreeClassifier(max_depth = 5)
+
+print("")
+print("Model Created Successfully!")
