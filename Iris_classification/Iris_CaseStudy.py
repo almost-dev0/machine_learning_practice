@@ -159,3 +159,36 @@ model = DecisionTreeClassifier(max_depth = 5)
 
 print("")
 print("Model Created Successfully!")
+
+
+print("")
+#######################################
+# Step 7 : TRAIN THE MODEL
+#######################################
+print(Border)
+print("Step 7 : Train the Model")
+print(Border)
+
+model = model.fit(X_train,Y_train)
+
+print("Model Trained Successfully!")
+
+
+print("")
+#######################################
+# Step 8 : EVALUATE (TEST) THE MODEL
+#######################################
+print(Border)
+print("Step 8 : Evaluate the Model")
+print(Border)
+
+Y_pred = model.predict(X_test)
+print("Model Evaluated (Tested) Successfully !")
+
+print("Expected Answers : ")
+print(Y_test)
+print("")
+
+print("Predicted Answers : ")
+print(Y_pred)
+print("")
