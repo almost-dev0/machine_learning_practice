@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+
 Border = "-" * 40
 
 #######################################
@@ -192,3 +196,21 @@ print("")
 print("Predicted Answers : ")
 print(Y_pred)
 print("")
+
+print("")
+#######################################
+# Step 9 : EVALUATE THE MODEL PERFORMANCE
+#######################################
+print(Border)
+print("Step 9 : Evaluate the Model Performance")
+print(Border)
+
+accuracy = accuracy_score(Y_test, Y_pred)
+print("Accuracy of the Model is : "+str(accuracy*100)+"%")
+
+cm = confusion_matrix(Y_test, Y_pred)
+print("Confusion Matrix : ")
+print(cm)
+
+print("Classification Report : ")
+print(classification_report(Y_test, Y_pred))
