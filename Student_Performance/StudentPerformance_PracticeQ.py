@@ -76,3 +76,35 @@ for result in df["FinalResult"]:
 
 print("Total Number of Students Passed : ",countfail)
 print("")
+
+"""
+Q3. Using pandas functions, calculate and display:
+a. Average StudyHours
+b. Average Attendance
+c. Maximum PreviousScore
+d. Minimum SleepHours
+"""
+
+# a. Average StudyHours
+average_studyhrs = (pd.Series.mean(df["StudyHours"]))        # SPECIFIC PANDAS MEAN FUNCTION           
+print("The Average study hours are : ",average_studyhrs)
+#average = df["StudyHours"].mean()                  # GENERAL MEAN FUNCTION            
+print("")
+
+
+# b. Average Attendence
+average_attendence = (pd.Series.mean(df["Attendance"]))
+print("The Average attendence is  : ",average_attendence)
+print("")
+
+# c. Maximum PreviousScore
+max = (pd.Series.max(df["PreviousScore"]))          # SPECIFIC PANDAS MAX FUNCTION
+print("Maximum of Previous Score : ", max)
+# max = print(df["PreviousScore"].max())            # GENERAL MAX FUNCTION
+print("")
+
+# d. Minimum SleepHours
+min = (pd.Series.min(df["PreviousScore"]))          # SPECIFIC PANDAS MIN FUNCTION
+print("Minimum of Sleep hours : ", min)
+# min = print(df["PreviousScore"].min())            # GENERAL MIN FUNCTION
+print("")
