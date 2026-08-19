@@ -43,3 +43,36 @@ print("")
 # e. Data types of each column
 print("Data types of each column : ")
 print(df.dtypes)
+
+
+
+"""
+Q2 : Write a program for  : 
+a. Total number of students in dataset
+b. Count how many students passed (FinalResult = 1)
+c. Count how many students failed (FinalResult = 0)
+"""
+
+# a. Total number of students in dataset
+print("")
+print("Total Number of Students in Dataset : ")
+print(df["Attendance"].count())
+print("")
+
+# b. Count how many students passed (FinalResult = 1)
+countpass = 0
+for result in df["FinalResult"]:
+    if result == 1:
+        countpass += 1
+
+print("Total Number of Students Passed : ",countpass)
+print("")
+
+# c. Count how many students failed (FinalResult = 0)
+countfail = 0
+for result in df["FinalResult"]:
+    if result == 0:
+        countfail += 1
+
+print("Total Number of Students Passed : ",countfail)
+print("")
