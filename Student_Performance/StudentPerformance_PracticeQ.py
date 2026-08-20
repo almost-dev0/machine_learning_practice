@@ -159,3 +159,23 @@ plt.xlabel("Study Hours")
 plt.ylabel("Frequency")
 
 plt.show()   
+
+
+"""
+Q7. Create a scatter plot of StudyHours vs PreviousScore
+Use different colors for Pass and Fail students.
+"""
+
+for result in df["FinalResult"].unique():
+    temp = df[df["FinalResult"] == result]
+    plt.scatter(temp["StudyHours"],
+                temp["PreviousScore"], label = result)
+
+plt.title("Student Performance Case Study")
+
+plt.xlabel("StudyHours")
+plt.ylabel("PreviousScore")
+
+plt.legend()
+plt.grid()
+plt.show()
