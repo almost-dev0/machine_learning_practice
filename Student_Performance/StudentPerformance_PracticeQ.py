@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 # Importing and loading the Dataset
 Datapath = "student_performance_ml.csv"
@@ -110,7 +110,7 @@ print("Minimum of Sleep hours : ", min)
 print("")
 
 """
-4. Use value_counts() to analyze the distribution of FinalResult.
+Q4. Use value_counts() to analyze the distribution of FinalResult.
 Calculate the percentage of Pass and Fail students.
 """
 
@@ -119,9 +119,9 @@ print("Distribution of FinalResult : ", df["FinalResult"].value_counts())
 
 
 """
-5. Based on the dataset values, analyze whether:
-• Higher StudyHours increase the chance of passing.
-• Higher Attendance improves FinalResult.
+Q5. Based on the dataset values, analyze whether:
+a. Higher StudyHours increase the chance of passing.
+b. Higher Attendance improves FinalResult.
 """
 #  a. Higher StudyHours increase chance of passing or not
 
@@ -138,3 +138,24 @@ corr2 = df["Attendance"].corr(df["StudyHours"])
 print("Correaltion between Attendance and Final Result is : ",corr2)
 print("Since the correlation is positive, and 0.99, it clearly indicates a direct proportion between Attendence and Students passing")
 print("Conclusion : Higher Attendence definitely improves FinalResult ")
+
+
+"""
+Q6. Plot a histogram of StudyHours.
+    Explain what the distribution tells you.
+"""
+
+plt.figure(figsize = (7,5))     #(width,length)
+
+plt.hist(
+    df["StudyHours"],
+    alpha = 0.9,
+    edgecolor = "black",
+    rwidth = 1.0,
+    )
+
+plt.title("Histogram")
+plt.xlabel("Study Hours")
+plt.ylabel("Frequency")
+
+plt.show()   
