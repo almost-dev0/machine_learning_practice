@@ -108,3 +108,10 @@ min = (pd.Series.min(df["PreviousScore"]))          # SPECIFIC PANDAS MIN FUNCTI
 print("Minimum of Sleep hours : ", min)
 # min = print(df["PreviousScore"].min())            # GENERAL MIN FUNCTION
 print("")
+
+"""
+4. Use value_counts() to analyze the distribution of FinalResult.
+Calculate the percentage of Pass and Fail students.
+"""
+
+print("Distribution of FinalResult : ", df["FinalResult"].value_counts())
