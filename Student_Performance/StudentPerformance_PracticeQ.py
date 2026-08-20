@@ -115,3 +115,26 @@ Calculate the percentage of Pass and Fail students.
 """
 
 print("Distribution of FinalResult : ", df["FinalResult"].value_counts())
+
+
+
+"""
+5. Based on the dataset values, analyze whether:
+• Higher StudyHours increase the chance of passing.
+• Higher Attendance improves FinalResult.
+"""
+#  a. Higher StudyHours increase chance of passing or not
+
+print("")
+corr1 = df["StudyHours"].corr(df["FinalResult"])
+print("Correlation between Study Hours and Final Result is : ",corr1)
+print("Since the correlation is positive, and 0.85, it clearly indicates a direct proportion between StuydHours and Students passing")
+print("Conclusion : Higher StudyHours definitely increase the chance of passing. ")
+print("")
+
+# b. Higher Attendence improves FinalResult
+
+corr2 = df["Attendance"].corr(df["StudyHours"])
+print("Correaltion between Attendance and Final Result is : ",corr2)
+print("Since the correlation is positive, and 0.99, it clearly indicates a direct proportion between Attendence and Students passing")
+print("Conclusion : Higher Attendence definitely improves FinalResult ")
