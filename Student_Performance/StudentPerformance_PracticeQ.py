@@ -179,3 +179,16 @@ plt.ylabel("PreviousScore")
 plt.legend()
 plt.grid()
 plt.show()
+
+"""
+Q8. Draw a boxplot for Attendance.
+Identify if any outliers are present.
+"""
+plt.title("Attendence")
+
+plt.boxplot(df["Attendance"])
+
+# xlabel is not generally needed because here there is only one box/category present
+plt.ylabel("Attendence")
+plt.grid()
+plt.show()
