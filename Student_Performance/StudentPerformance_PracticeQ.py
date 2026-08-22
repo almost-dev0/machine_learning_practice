@@ -192,3 +192,24 @@ plt.boxplot(df["Attendance"])
 plt.ylabel("Attendence")
 plt.grid()
 plt.show()
+
+"""
+Q9. Create a plot showing relationship between AssignmentsCompleted and FinalResult
+"""
+
+plt.scatter(
+    df["AssignmentsCompleted"], 
+    df["FinalResult"],
+    s = 100,                        # size of dots
+    alpha = 0.8,
+    edgecolors= "black",
+    marker = "o",
+    label = "Students"
+    )
+
+plt.xlabel = "AssignmentsCompleted"
+plt.ylabel = "FinalResult"
+
+plt.legend()
+plt.grid()
+plt.show()
