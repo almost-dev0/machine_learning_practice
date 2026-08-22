@@ -213,3 +213,29 @@ plt.ylabel = "FinalResult"
 plt.legend()
 plt.grid()
 plt.show()
+
+"""
+Q10. Plot SleepHours against FinalResult.
+Does sleeping more guarantee success? Explain.
+"""
+plt.scatter(
+    df["SleepHours"], 
+    df["FinalResult"],
+    s = 100,         
+    alpha = 0.8,
+    edgecolors= "black",
+    marker = "o",
+    label = "Students"
+    )
+
+plt.yticks([0, 1], ["Fail", "Pass"]),               
+plt.title("Sleephours vs FinalResults")
+plt.xlabel = "SleepHours"
+plt.ylabel = "FinalResult"
+
+plt.legend()
+plt.grid()
+plt.show()
+
+print("")
+print("Q10 Conclusion : The data shows a strong tendency that higher SleepHours are associated with passing, but because there is at least one student who slept 6 hours and still passed while others with 6 hours failed, sleep is not an absolute guarantee of success.")
