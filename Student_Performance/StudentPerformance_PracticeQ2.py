@@ -108,3 +108,32 @@ print("True Positive  : 2 ")
 print("True Negative  : 5 ")
 print("False Positive : 0 ")
 print("False Negative : 1 ")
+
+"""
+Q5. Calculate:
+    • Training accuracy
+    • Testing accuracy
+    Compare both and comment whether the model is overfitting or underfitting.
+"""
+
+# calculating training accuracy
+
+Y_train_pred = model.predict(X_train)
+
+train_acc = accuracy_score(Y_train_pred, Y_train)
+
+print("")
+print("Training accuracy : "+ str(train_acc*100) + "%")
+
+
+# calculating testing accuracy
+
+Y_pred = model.predict(X_test)
+
+test_acc = accuracy_score(Y_pred, Y_test)
+
+print("Testing accuracy : "+ str(test_acc*100) + "%")
+
+print("Training accuracy of 100% suggests that model has memorised the training data and won't perform well on new data")
+print("Testing accuracy of 87.5% is realatively low than training accuracy")
+print("This makes the model OVERFITTED")
