@@ -3,6 +3,8 @@ import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
 
 """
 Q1 : Import DecisionTreeClassifier from sklearn
@@ -77,3 +79,32 @@ Q3. Calculate model accuracy using accuracy_score.
 accuracy = accuracy_score(Y_pred, Y_test)
 print("")
 print("Model Accuracy is : "+ str(accuracy*100) + "%")
+
+
+"""
+Q4. Generate confusion matrix using sklearn.
+    Display it using ConfusionMatrixDisplay.
+    Explain clearly:
+        • True Positive
+        • True Negative
+        • False Positive
+        • False Negative
+"""
+cm = confusion_matrix(Y_test, Y_pred)
+print("")
+print("Confusion Matrix is : ") 
+print(cm)
+
+cmplot = ConfusionMatrixDisplay(cm)
+cmplot.plot()
+display_labels = [0,1]
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+plt.show()
+
+print("")
+print("Plotting 0 = Negative and 1 = Postive, ")
+print("True Positive  : 2 ")
+print("True Negative  : 5 ")
+print("False Positive : 0 ")
+print("False Negative : 1 ")
