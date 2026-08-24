@@ -137,3 +137,48 @@ print("Testing accuracy : "+ str(test_acc*100) + "%")
 print("Training accuracy of 100% suggests that model has memorised the training data and won't perform well on new data")
 print("Testing accuracy of 87.5% is realatively low than training accuracy")
 print("This makes the model OVERFITTED")
+
+"""
+Q6. Train three Decision Tree models with:
+    • max_depth = 1
+    • max_depth = 3
+    • max_depth = None
+    Compare their testing accuracies and write your observations.
+"""
+
+# creating three Decision Tree Models
+
+model1 = DecisionTreeClassifier(max_depth = 1, random_state = 42)
+model2 = DecisionTreeClassifier(max_depth = 3, random_state = 42)
+model3 = DecisionTreeClassifier(max_depth = None, random_state = 42)
+
+
+# training the models
+
+model1 = model1.fit(X_train, Y_train)
+model2 = model2.fit(X_train, Y_train)
+model3 = model3.fit(X_train, Y_train)
+
+
+# testing the models
+
+Y_pred1 = model1.predict(X_test)
+Y_pred2 = model2.predict(X_test)
+Y_pred3 = model3.predict(X_test)
+
+
+# evaluating the models
+
+print("")
+
+acc1 = accuracy_score(Y_test, Y_pred1)
+print("Accuracy of tree with max depth 1 : "+ str(acc1*100) + "%")
+acc2 = accuracy_score(Y_test, Y_pred2)
+print("Accuracy of tree with max depth 3 : "+ str(acc2*100) + "%")
+acc3 = accuracy_score(Y_test, Y_pred3)
+print("Accuracy of tree with max depth None : "+ str(acc3*100) + "%")
+
+print("")
+print("The accuracy score of all three DecisionTrees is same.")
+print("However, when I did the same process on breast-cancer-wisconsin.csv dataset, accuracy increased as max depth increased.")
+print("So, to conclude, it can be said that difference in accuracies (if any) can be observed with larger datasets as compared to this one.")
