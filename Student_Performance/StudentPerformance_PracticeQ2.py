@@ -40,3 +40,22 @@ print("MODEL BUILT SUCCESSFULLY!")
 model = model.fit(X_train, Y_train)
 print("")
 print("MODEL TRAINED SUCCESSFULLY!")
+
+
+"""
+Q2. Use the trained model to predict results for X_test.
+    Display predicted values along with actual values.
+"""
+
+# Testing the Model
+
+Y_pred = model.predict(X_test)
+print("")
+print("MODEL TESTED SUCCESSFULLY!")
+
+# Display predicted values along with actual values
+
+print("")
+print ("Predicted : Actual")
+for i in range(len(Y_test)):
+    print(f"    {Y_pred[i]}     :     {Y_test.iloc[i]} ")
