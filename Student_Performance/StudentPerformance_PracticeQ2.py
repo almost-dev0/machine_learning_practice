@@ -2,6 +2,7 @@ import pandas as pd
 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, confusion_matrix
 
 """
 Q1 : Import DecisionTreeClassifier from sklearn
@@ -53,9 +54,26 @@ Y_pred = model.predict(X_test)
 print("")
 print("MODEL TESTED SUCCESSFULLY!")
 
+
 # Display predicted values along with actual values
 
 print("")
 print ("Predicted : Actual")
+# used .iloc[i] to traverse Y_test
+# since y_test is a pandas series, we cannot traverse it normmally because indexes in a series are not serial (0,1,2,...) because the data
+# selected for y_test is randomly selected. Hence, we need .iloc[i] so it accesses the data by its position rather than its actual index label.
 for i in range(len(Y_test)):
     print(f"    {Y_pred[i]}     :     {Y_test.iloc[i]} ")
+
+
+
+"""
+Q3. Calculate model accuracy using accuracy_score.
+    Display the result in percentage format.
+"""
+
+# Calculating model accuracy
+
+accuracy = accuracy_score(Y_pred, Y_test)
+print("")
+print("Model Accuracy is : "+ str(accuracy*100) + "%")
