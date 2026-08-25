@@ -11,7 +11,15 @@ Q8. Write a single structured Python program that performs:
     7. Accuracy calculation
     8. Confusion matrix generation
     9. Final conclusion
-Your code should include proper comments explaining each step.
+    Your code should include proper comments explaining each step.
 """
 
-#
+import pandas as pd
+
+# 1. Dataset Loading
+
+df = pd.read_csv("student_performance_ml.csv")
+
+print("")
+print("DATASET LOADED SUCCESSFULLY!")
+print("")
