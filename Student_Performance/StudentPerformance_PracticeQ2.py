@@ -204,6 +204,7 @@ student_data = pd.DataFrame(
                                 7
                             ]], 
                             columns=X.columns)
+# PLEASE ENTER THE DATA IN EXACT SEQUENCE AS COLUMNS IN CSV FILE/ DATASET
 
 result_prediction = model.predict(student_data)
 
