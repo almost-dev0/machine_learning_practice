@@ -16,10 +16,28 @@ Q8. Write a single structured Python program that performs:
 
 import pandas as pd
 
-# 1. Dataset Loading
+Border = "-" * 30
 
-df = pd.read_csv("student_performance_ml.csv")
+###########################################
+# STEP 1 : LOAD THE DATASET
+###########################################
+
+print(Border)
+print("Step 1 :Load the Dataset")
+print(Border)
+
+DataPath = "student_performance_ml.csv"
+
+# df = data frame
+df = pd.read_csv(DataPath)
 
 print("")
-print("DATASET LOADED SUCCESSFULLY!")
+print("Dataset Loaded Successfully!")
+print("")
+
+print("Initial Entries from Dataset are : ")
+# prints first 5 records, by default value of df.head() is 5, df.head(n) gives first n records, similar is df.tail() for last records
+print(df.head())        
+
+print("")
 print("")
