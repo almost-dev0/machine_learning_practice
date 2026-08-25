@@ -182,3 +182,32 @@ print("")
 print("The accuracy score of all three DecisionTrees is same.")
 print("However, when I did the same process on breast-cancer-wisconsin.csv dataset, accuracy increased as max depth increased.")
 print("So, to conclude, it can be said that difference in accuracies (if any) can be observed with larger datasets as compared to this one.")
+
+
+"""
+Q7. Use the trained model to predict result for a student with:
+    • StudyHours = 6
+    • Attendance = 85
+    • PreviousScore = 66
+    • AssignmentsCompleted = 7
+    • SleepHours = 7
+    Will the student Pass or Fail?
+"""
+
+print("")
+student_data = pd.DataFrame(
+                            [[
+                                6,
+                                85,
+                                66,
+                                7,
+                                7
+                            ]], 
+                            columns=X.columns)
+
+result_prediction = model.predict(student_data)
+
+if result_prediction == 1 : 
+    print("Prediction : The student will PASS")
+else:
+    print("Prediction : The student will FAIL")
