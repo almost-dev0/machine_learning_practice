@@ -41,3 +41,27 @@ print(df.head())
 
 print("")
 print("")
+
+###########################################
+# STEP 2 : DATA ANALYSIS (EXPLORATORY DATA ANALYSIS)
+###########################################
+
+print(Border)
+print("Step 2 : Data Analysis (EDA)")
+print(Border)
+
+print("Shape of Dataset : ",df.shape)
+
+print("Column Names : ",list(df.columns))
+
+print("Missing Values per Column : ")
+print(df.isnull().sum())    
+
+print("Class distribution (Final Result) : ")
+print(df["FinalResult"].value_counts())
+
+print("Statistical Report of Dataset : ")
+print(df.describe())
+
+print("")
+print("")
