@@ -1,10 +1,10 @@
 import pandas as pd
 
 def main():
-    data = [11,21.2,"51.6",True]
+    sobj = pd.Series([11,21.2,"51.6",True],index = [5,6,7,8])
 
-    sobj = pd.Series(data)
     print(sobj)
+    print(sobj[7])
 
 
 if __name__ == "__main__":
