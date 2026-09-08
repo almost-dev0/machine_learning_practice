@@ -1,7 +1,7 @@
 import pandas as pd
 
 def main():
-    sobj = pd.Series([11,21.2,"51.6",True],index = ["C","C++","Java","Python"])
+    sobj = pd.Series([11,21.2,"51.6",True],index = ["C","C++","Java","Java"])
 
     print(sobj)
     print(sobj["Java"])
