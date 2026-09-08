@@ -1,10 +1,10 @@
 import pandas as pd
 
 def main():
-    sobj = pd.Series([11,21.2,"51.6",True],index = [5,6,7,8])
+    sobj = pd.Series([11,21.2,"51.6",True],index = ["C","C++","Java","Python"])
 
     print(sobj)
-    print(sobj[7])
+    print(sobj["Java"])
 
 
 if __name__ == "__main__":
