@@ -1,26 +1,26 @@
 import matplotlib.pyplot as plt
 
 def main():
-    language = ["C", "C++", "Java", "Python"]
-    students = [30,40,35,55]
+    study_hours = [1,2,3,4,5,6]
+    marks = [35,42,50,62,72,85]
 
-    plt.bar(
-        language,                   # X-axis
-        students,                   # Y-axis
-        width = 0.6,                # width of bar
-        edgecolor = "black",        # border color of bar
-        linewidth = 1,              # width of bar border
-        alpha = 1.0,                # transparency (0.0 - 1.0)
-        label = "Students"          # legend text
+    plt.scatter(
+        study_hours,
+        marks,
+        s = 100,
+        marker = "o",
+        alpha = 1.0,
+        edgecolors = "black",
+        linewidths = 1,
+        label = "Students"
     )
 
-    plt.title("Bar Plot")
-    plt.xlabel("Languages")
-    plt.ylabel("Number of Students")
+    plt.title("Scatter Plot")
+    plt.xlabel("Study Hours")
+    plt.ylabel("Obtained Marks")
+    plt.grid(True)
     plt.legend()
     plt.show()
-
-    plt.title
 
 if __name__ == "__main__":
     main()
