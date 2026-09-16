@@ -20,7 +20,5 @@ def main():
     plt.legend()
     plt.show()
 
-    plt.title
-
 if __name__ == "__main__":
     main()
