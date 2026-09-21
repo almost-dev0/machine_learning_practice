@@ -1,0 +1,31 @@
+import numpy as np
+import pandas as pd
+from sklearn.neighbors import KNeighborsClassifier
+
+
+def main():
+    # Independent 
+    X = np.array([
+        [1,2],
+        [2,3],
+        [3,1],
+        [5,6],
+    ])
+
+    # Dependent
+    Y = np.array(["Red","Red","Blue","Blue"])
+
+    new_point = np.array([[3,3]])
+
+    # Model Creation
+    model = KNeighborsClassifier(n_neighbors = 3)       # n_neighbors is the hyperparameter here, 5 is the default value
+
+    # Model Training
+    model = model.fit(X,Y)
+
+    Y_pred = model.predict(new_point)
+
+    print("Predicted Label : ",Y_pred)
+
+if __name__ == "__main__":
+    main()
