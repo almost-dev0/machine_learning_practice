@@ -39,6 +39,17 @@ def KNNReplica():
 
     print(border)
 
+    k = 3
+    nearest = sorted_data[:k]
+
+    print(border)
+    print("Nearest 3 Members are : ")
+    print(border)
+
+    print(nearest)
+
+    print(border)
+
 def main():
     KNNReplica()
 
