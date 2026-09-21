@@ -25,8 +25,17 @@ def KNNReplica():
     print("Distances of newpoint from all points : ")
 
     for i in range(len(Data)):
-        Result = EucDistance(Data.iloc[i], new_point)
-        print("Distance is : ",Result)
+        Data.loc[i, 'Distance'] = EucDistance(Data.iloc[i], new_point)
+        # this here means, calculate the EucDistance between ith iteration point and new point,
+        # and store the result of that ith iteration in 'Distance'
+    
+    print(Data)
+
+    print(border)
+
+    # this means sort the values of "distance" column 
+    sorted_data = Data.sort_values('Distance')
+    print(sorted_data)
 
     print(border)
 
