@@ -83,7 +83,16 @@ def KNN_Classifier(Datapath):
     print("Feature Scaling Successful!")
 
     print(border)
-    
+
+# Step 6 : Build the Model
+    print(border)
+    print("Step 6 : Build the Model")
+    print(border)
+
+    model = KNeighborsClassifier(n_neighbors = 9)
+
+    print("Model Build Successful")
+
 def main():
     KNN_Classifier("WinePredictor.csv")
 
