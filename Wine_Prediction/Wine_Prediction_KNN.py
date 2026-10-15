@@ -103,6 +103,17 @@ def KNN_Classifier(Datapath):
     print("Model Training Successful")
     print(border)
 
+# Step 8 : Test the Model
+    print(border)
+    print("Step 8 : Test the Model")
+    print(border)
+
+    Y_pred = model.predict(X_test_scaled)
+
+    accuracy = accuracy_score(Y_test, Y_pred)
+
+    print("Model Accuracy is : ", accuracy*100)
+
 def main():
     KNN_Classifier("WinePredictor.csv")
 
