@@ -93,6 +93,16 @@ def KNN_Classifier(Datapath):
 
     print("Model Build Successful")
 
+# Step 7 : Train the Model
+    print(border)
+    print("Step 7 : Train the Model")
+    print(border)
+
+    model = model.fit(X_train_scaled,Y_train)
+
+    print("Model Training Successful")
+    print(border)
+
 def main():
     KNN_Classifier("WinePredictor.csv")
 
