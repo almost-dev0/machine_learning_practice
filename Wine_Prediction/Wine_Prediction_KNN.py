@@ -105,6 +105,21 @@ def KNN_Classifier(Datapath):
         print(no)
 
     print(border)
+
+# Step 7: Graphical Representation
+    print(border)
+    print("Step 7: Graphical Representation")
+    print(border)
+
+    plt.figure(figsize=(8,5))
+    plt.plot(K_values, accuracy_score_list, marker = "o")
+    plt.title("K_Values vs Accuracy")
+    plt.xlabel("Value of K")
+    plt.ylabel("Accuracy")
+    plt.grid(True)
+    plt.xticks(list(K_values))
+    plt.show()
+    
 def main():
     KNN_Classifier("WinePredictor.csv")
 
