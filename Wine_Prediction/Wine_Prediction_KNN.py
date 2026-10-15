@@ -84,36 +84,27 @@ def KNN_Classifier(Datapath):
 
     print(border)
 
-# Step 6 : Build the Model
+# Step 6: Hyperparameter Tuning
     print(border)
-    print("Step 6 : Build the Model")
-    print(border)
-
-    model = KNeighborsClassifier(n_neighbors = 9)
-
-    print("Model Build Successful")
-
-# Step 7 : Train the Model
-    print(border)
-    print("Step 7 : Train the Model")
+    print("Step 6 : Hyperparameter Tuning")
     print(border)
 
-    model = model.fit(X_train_scaled,Y_train)
+    accuracy_score_list = []
+    K_values = range(1,21)
 
-    print("Model Training Successful")
+    for k in K_values :
+        model = KNeighborsClassifier(n_neighbors = k)       # Building the Model
+        model = model.fit(X_train_scaled, Y_train)          # Training the Model
+        Y_pred = model.predict(X_test_scaled)               # Testing the Model
+        accuracy = accuracy_score(Y_test, Y_pred)           # Calculate the accuracy_score
+        accuracy_score_list.append(accuracy)                # Appending the scores in the accuracy scores list
+
+
+    print("Accuracy Report : ")
+    for no in accuracy_score_list:
+        print(no)
+
     print(border)
-
-# Step 8 : Test the Model
-    print(border)
-    print("Step 8 : Test the Model")
-    print(border)
-
-    Y_pred = model.predict(X_test_scaled)
-
-    accuracy = accuracy_score(Y_test, Y_pred)
-
-    print("Model Accuracy is : ", accuracy*100)
-
 def main():
     KNN_Classifier("WinePredictor.csv")
 
