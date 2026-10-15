@@ -71,6 +71,19 @@ def KNN_Classifier(Datapath):
 
     print(border)
 
+# Step 5 : Feature Scaling
+    print(border)
+    print("Step 5 : Feature Scaling")
+    print(border)
+
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.fit_transform(X_test)
+
+    print("Feature Scaling Successful!")
+
+    print(border)
+    
 def main():
     KNN_Classifier("WinePredictor.csv")
 
