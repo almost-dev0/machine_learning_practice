@@ -35,6 +35,22 @@ def KNN_Classifier(Datapath):
     print("Total Columns : ",df.shape[1])
     print(border)
 
+# Step 3 : Seperate Independent and Dependent Variables
+    print(border)
+    print("Step 3 : Seperate Independent and Dependent Variables")
+    print(border)
+
+    X = df.drop(columns = ['Class'])        # this means everything except 'Class' column is included in X
+    Y = df['Class']
+
+    print("Shape of X : ", X.shape)     # independent
+    print("Shape of Y : ", Y.shape)     # dependent
+
+    print(border)
+    print("Input Columns : ", X.columns.tolist())
+    print("Output Column : Class")
+    print(border)
+
 def main():
     KNN_Classifier("WinePredictor.csv")
 
