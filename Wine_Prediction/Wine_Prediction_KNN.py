@@ -47,8 +47,28 @@ def KNN_Classifier(Datapath):
     print("Shape of Y : ", Y.shape)     # dependent
 
     print(border)
-    print("Input Columns : ", X.columns.tolist())
+    print("Input Columns : ", X.columns.tolist())       # .tolist() compiles the data into a list
     print("Output Column : Class")
+    print(border)
+
+# Step 4 : Split the Dataset for Training and Testing
+    print(border)
+    print("Step 4 : Split the Dataset for Training and Testing")
+    print(border)
+
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 42, stratify = Y)
+    # stratify = Y preserves class proportions in training and testing sets.
+    # Example: If Y has 70% Class A and 30% Class B, both sets will maintain approximately the same 70:30 ratio.
+    
+    print(border)
+    print("Details of Training and Testing Data")
+
+    print("Shape of X_train :", X_train.shape)
+    print("Shape of X_test  :", X_test.shape)
+
+    print("Shape of Y_train :", Y_train.shape)
+    print("Shape of Y_test  :", Y_test.shape)
+
     print(border)
 
 def main():
