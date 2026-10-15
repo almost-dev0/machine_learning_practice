@@ -56,7 +56,7 @@ def KNN_Classifier(Datapath):
     print("Step 4 : Split the Dataset for Training and Testing")
     print(border)
 
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 42, stratify = Y)
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.5, random_state = 42, stratify = Y)
     # stratify = Y preserves class proportions in training and testing sets.
     # Example: If Y has 70% Class A and 30% Class B, both sets will maintain approximately the same 70:30 ratio.
     
