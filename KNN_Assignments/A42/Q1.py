@@ -34,3 +34,13 @@ B - Distance: 1.0
 C - Distance: 1.41
 Predicted Class: Red
 """
+
+def EuclideanDistance(x1,y1):
+    pass
+
+def main():
+    x1 = int(input("Enter X Co-ordinate of Your Point : "))
+    y1 = int(input("Enter Y Co-ordinate of Your Point : "))
+
+if __name__ == "__main__":
+    main()
