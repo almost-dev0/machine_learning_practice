@@ -103,7 +103,7 @@ def main():
     print("")
 
     prediction = Voting(distances)
-    print("Considering K = 3, Prediction for your Point is : ",prediction)
+    print("Considering K = 3, Predicted Class : ",prediction)
 
 if __name__ == "__main__":
     main()
