@@ -49,7 +49,7 @@ def EuclideanDistance(x1,y1):
 
     for name, ((x2,y2),label) in points.items():
         distance = math.sqrt( ((x2 - x1)**2) + ((y2 - y1)**2) )
-        distances_list.append((name,distance))    
+        distances_list.append((name,distance,label))    
 
     return distances_list
 
@@ -70,17 +70,40 @@ def EuclideanDistance(x1,y1):
 
     #return dwA, dwB, dwC, dwD
 
+def Voting(distances_list):
+
+    color_prediction = []
+    prediction = None
+
+    for name, distance, label in distances_list[:3]:
+        color_prediction.append(label)
+
+    if color_prediction.count("Red") > color_prediction.count("Blue"):
+        prediction = "Red"
+    else:
+        prediction = "Blue"
+    
+    return prediction
+
 def main():
     x1 = int(input("Enter X Co-ordinate of Your Point : "))
     y1 = int(input("Enter Y Co-ordinate of Your Point : "))
+    print()
 
     distances = EuclideanDistance(x1,y1)
-    distances.sort(key = lambda item : item[1])
-
+    distances.sort(key = lambda item : item[1])         
+    #since our distances has three items, item[0] is point name, item[1] is distance and item[2] is label(color), 
+    #we have sorted it wrt item[1], i.e., distance
+    
     print("Nearest Neighbors : ")
     print(distances[0])
     print(distances[1])
     print(distances[2])
+
+    print("")
+
+    prediction = Voting(distances)
+    print("Considering K = 3, Prediction for your Point is : ",prediction)
 
 if __name__ == "__main__":
     main()
