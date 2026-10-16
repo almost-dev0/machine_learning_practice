@@ -39,22 +39,22 @@ import math
 def EuclideanDistance(x1,y1):
 
     points = {                      # dictionary
-        "A" : (1,2),
-        "B" : (2,3),
-        "C" : (3,1),
-        "D" : (6,5),
+        "A" : ((1,2), "Red"),
+        "B" : ((2,3), "Red"),
+        "C" : ((3,1), "Blue"),
+        "D" : ((6,5), "Blue")
         }
 
     distances_list = []
 
-    for name, (x2,y2) in points.items():
+    for name, ((x2,y2),label) in points.items():
         distance = math.sqrt( ((x2 - x1)**2) + ((y2 - y1)**2) )
-        distances_list.append(distance)    
+        distances_list.append((name,distance))    
 
     return distances_list
 
 # RAW LOGIC
-    # Ax2 = 1 c
+    # Ax2 = 1 
     # Ay2 = 2
     # Bx2 = 2 
     # By2 = 3
@@ -74,6 +74,13 @@ def main():
     x1 = int(input("Enter X Co-ordinate of Your Point : "))
     y1 = int(input("Enter Y Co-ordinate of Your Point : "))
 
+    distances = EuclideanDistance(x1,y1)
+    distances.sort(key = lambda item : item[1])
+
+    print("Nearest Neighbors : ")
+    print(distances[0])
+    print(distances[1])
+    print(distances[2])
 
 if __name__ == "__main__":
     main()
