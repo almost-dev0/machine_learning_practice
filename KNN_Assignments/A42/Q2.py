@@ -19,7 +19,7 @@ Dataset
 -------------------------
 
 Tasks
-Predict the class of the same new point using:
+Predict the class of the same new point(2,2) using:
 • K = 1
 • K = 3
 • K = 5
@@ -39,8 +39,8 @@ def EuclideanDistance(x1,y1):
         "A" : ((1,2), "Red"),
         "B" : ((2,3), "Red"),
         "C" : ((3,1), "Blue"),
-        "D" : ((6,5), "Blue"),
-        "E" : ((5,4), "Blue")
+        "D" : ((6,5), "Blue")
+        #"E" : ((5,4), "Blue")
         }
 
     distances_list = []
@@ -73,7 +73,7 @@ def Voting(distances_list):
     color_prediction = []
     prediction = None
 
-    for name, distance, label in distances_list[:3]:
+    for name, distance, label in distances_list:
         color_prediction.append(label)
 
     if color_prediction.count("Red") > color_prediction.count("Blue"):
@@ -93,15 +93,15 @@ def main():
     #since our distances has three items, item[0] is point name, item[1] is distance and item[2] is label(color), 
     #we have sorted it wrt item[1], i.e., distance
     
-    print("Nearest Neighbors : ")
-    print(distances[0])
-    print(distances[1])
-    print(distances[2])
+    value_k = int(input("Enter Value of K : "))
+
+    for elements in distances:
+        print(elements)
 
     print("")
 
     prediction = Voting(distances)
-    print("Considering K = 3, Predicted Class : ",prediction)
+    print(f"Considering K = {value_k}, Predicted Class : ",prediction)
 
 if __name__ == "__main__":
     main()
