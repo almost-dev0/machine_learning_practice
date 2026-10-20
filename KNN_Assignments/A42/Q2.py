@@ -68,12 +68,12 @@ def EuclideanDistance(x1,y1):
 
     #return dwA, dwB, dwC, dwD
 
-def Voting(distances_list):
+def Voting(distances_list,value_k):
 
     color_prediction = []
     prediction = None
 
-    for name, distance, label in distances_list:
+    for name, distance, label in distances_list[:value_k]:
         color_prediction.append(label)
 
     if color_prediction.count("Red") > color_prediction.count("Blue"):
@@ -100,7 +100,7 @@ def main():
 
     print("")
 
-    prediction = Voting(distances)
+    prediction = Voting(distances,value_k)
     print(f"Considering K = {value_k}, Predicted Class : ",prediction)
 
 if __name__ == "__main__":
